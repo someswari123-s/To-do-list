@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>To-Do List App</title>
+<style>
+body{  
+    font-family:Arial;
+    background:linear-gradient(to right,
+#4facfe, #00f2fe);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+.container{
+   background:white;
+   padding:30px;
+   border-radius:15px;
+   width:350px;
+   text-align:center;
+   box-shadow:0 0 10px gray;
+}
+input{
+  width:70%;
+  padding:10px;
+}
+button{
+  padding:10px;
+  background:blue;
+  color:white;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+}
+li{
+  margin:10px;
+  background:#f1f1f1;
+  padding:10px;
+  border-radius:5px;
+ }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>To-Do List App</h1>
+<input type="text" id="task"
+placeholder="Enter Task">
+<button onclick="addTask()">Add</button>
+<ul id="list"></ul>
+</div>
+<script>
+function addTask(){
+let task=
+document.getElementById("task").value;
+if(task==""){
+alert("Enter a task"); 
+return;
+}
+let li=
+document.createElement("li");
+li.innerHTML=task;
+document.getElementById("list").appendChild
+(li);
+document.getElementById("task").value="";
+}
+</script>
+</body>
+  </html>
